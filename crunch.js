@@ -105,7 +105,14 @@ function showError(msg){
 	$('#msg').html('&nbsp;' +msg);
 }
 
+/* Special functions */
 function sqrt(num){		return Math.sqrt(num);	}
+function round(num,to){	
+	to = typeof(to) != 'undefined' ? to : 0;
+	if(to == 0)	return Math.round(num); 
+	to = Math.pow(10,to);
+	return Math.round(num*to)/to;
+}
 function ecpm(imps,dollars){
-	return Math.round((dollars/imps * 1000)*100)/100;
+	return round((dollars/imps * 1000),2);
 }
