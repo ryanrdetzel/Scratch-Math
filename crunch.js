@@ -54,6 +54,9 @@ function doCalc(){
 	//Replace commas
 	eq = eq.replace(new RegExp(',','g'), '');
 	
+	//Replace semicolen with comma
+    eq = eq.replace(new RegExp(';','g'), ',');
+
 	//Replace variables
 	for (var k in active_vars){
 		eq = eq.replace(new RegExp(k,'g'), active_vars[k]);
