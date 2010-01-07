@@ -1,0 +1,66 @@
+body{
+	font-size:16px;
+	font-family:Verdana;
+	margin:60px 0 0 200px;
+	background:#e0e0e0 url(background.png);
+	background-repeat:repeat-y;
+	padding:0;
+}
+input#enter{
+	font-weight:bold;
+	font-size:16px;
+}
+input#entry{
+	font-size:18px;
+	padding:4px;
+	width:500px;
+}
+span.org, span.var, span.equals,span.result{
+	display:block;
+	float:left;
+}
+span.var{
+	color:#2777b0;
+	padding-right:20px;
+	width:150px;
+	clear:left;
+	text-align:right;
+	overflow:hidden;
+}
+ul{
+	list-style:none;
+	padding:0;
+	margin-left:-170px;
+}
+ul li{
+	padding:2px 0 1px 0;
+	border-bottom:1px dashed #ccc;
+	float:left;
+	width:100%;
+}
+a{
+	font-size:12px;
+	color:#2777b0;
+}
+span.result{
+	font-weight:bold;
+}
+span.variable{
+	color:#666;
+}
+div#msg{
+	font-size:11px;
+	color:red;
+	padding:2px;
+}
+div#info{
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:150px;
+	border-top:2px solid #ccc;
+	background:#efefef;
+	padding:10px;
+	font-size:12px;
+}
