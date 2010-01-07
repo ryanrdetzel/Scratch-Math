@@ -46,11 +46,19 @@ function doCalc(){
 	original_eq = original_eq.replace(new RegExp('([-|+|*|\/])',"g"), fixSpacing);
 	
 	//Replace any percents
-	var match = /(\d+)\%/.exec(eq);
+	var match = /([\d|\.]+)\%/.exec(eq);
 	while (match){
 		eq = eq.replace(new RegExp(match[1] + '%','g'), match[1] / 100);
-		match = /(\d+)\%/.exec(eq);
+		match = /([\d|\.]+)\%/.exec(eq);
 	}
+
+    //Replace powers
+    match = /([\d|\.]+)\^([\d|\.]+)/.exec(eq);
+    while (match){
+        eq = eq.replace(match[1] + '^' + match[2], 'pow(' + match[1] + ';' + match[2] + ')');
+        match = /([\d|\.]+)\^([\d|\.]+)/.exec(eq);
+    }
+
 	//Replace commas
 	eq = eq.replace(new RegExp(',','g'), '');
 	
@@ -106,6 +114,10 @@ function showError(msg){
 }
 
 /* Special functions */
+function pow(num,power){
+    return Math.pow(num,power);
+}
+
 function sqrt(num){		return Math.sqrt(num);	}
 function round(num,to){	
 	to = typeof(to) != 'undefined' ? to : 0;
