@@ -108,7 +108,6 @@ function addCommas(nStr){
 	return x1 + x2;
 }
 
-
 function showError(msg){
 	$('#msg').html('&nbsp;' +msg);
 }
